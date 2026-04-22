@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model ConversionHistory {
+  id        String   @id @default(cuid())
+  from      String
+  to        String
+  amount    Float
+  result    Float
+  createdAt DateTime @default(now())
+}
